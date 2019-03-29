@@ -11,10 +11,19 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
+});*/
+
+//Route::get('/', 'SiteController@index');
+
+$this->group(['middleware' => ['auth'],'namespace' => 'Admin'], function(){
+    $this->get('admin', 'Admin\AdminController@index')->name('admin.home');
 });
+
+$this->get('/', 'site\SiteController@index')->name('home');
+
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
