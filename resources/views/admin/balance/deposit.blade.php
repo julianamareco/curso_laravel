@@ -20,7 +20,7 @@
             <form method="POST" action="{{route('deposit.store')}}">
                 {!! csrf_field() !!}
                 <div class="form-group">
-                    <input type="text" placeholder="Valor Depósito" class="form-control">
+                    <input type="text" name="valor" placeholder="Valor Depósito" class="form-control">
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-success">Depositar</button>
