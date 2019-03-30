@@ -18,7 +18,7 @@
 //Route::get('/', 'SiteController@index');
 
 $this->group(['middleware' => ['auth'],'namespace' => 'Admin'], function(){
-    $this->get('admin', 'Admin\AdminController@index')->name('admin.home');
+    $this->get('admin', 'AdminController@index')->name('admin.home');
 });
 
 $this->get('/', 'site\SiteController@index')->name('home');
